@@ -24,6 +24,6 @@ NR > 2 {
 
 END {
     for (i in num) {
-        print("%-6s%6s\n",i,Convert(num[i]))
+        printf("%-6s %6s\n",i,Convert(num[i]))
         }    
     }
