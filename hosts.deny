@@ -1,0 +1,17 @@
+"""
+  spawn 开启一个 shell 执行你指定的命令
+  twist 替换访问者的请求成我们指定的命令
+  %a 客户端IP
+  %A 服务端IP
+  %d 守护进程的名字
+  %h 客户端的主机名
+  %H 服务端的主机名
+  %p 守护进程的PID
+  %u 客户端的用户名
+  """
+# ALL: PARANOID
+#sshd: 10.60.50.0/255.255.255.0
+#ALL: ALL \
+#       : spawn (/bin/echo %a from %h attempted to access %d >> \
+#       /var/log/connetions.log) : deny
+ALL: ALL : twist /bin/echo "Hello,attacker!You are prohibited from accessing this service!!" 
